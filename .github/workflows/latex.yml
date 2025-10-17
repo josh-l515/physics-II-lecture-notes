@@ -1,0 +1,42 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Mirror directory structure into build/
+        run: |
+          find . -type d ! -path './.git*' ! -path './build*' -exec bash -c 'mkdir -p build/"${0#./}"' {} \;
+
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          compiler: latexmk
+          args: "-xelatex -interaction=nonstopmode -shell-escape"
+
+
+      - name: Move PDF to docs/
+        run: |
+          mkdir -p docs
+          cp build/main.pdf docs/
+
+      - name: Commit and push PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/main.pdf
+          git commit -m "Update compiled PDF [skip ci]" || echo "No changes to commit"
+          git push
