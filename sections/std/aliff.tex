@@ -1,0 +1,115 @@
+\section{Física de los Agujeros Negros}
+
+Los \textbf{agujeros negros} son soluciones a las ecuaciones de la relatividad general de Einstein que describen regiones del espacio-tiempo con un campo gravitatorio tan intenso que nada, ni siquiera la luz, puede escapar de su interior. Constituyen uno de los objetos más extremos del universo y un laboratorio natural para estudiar la interacción entre la \textit{gravedad}, la \textit{mecánica cuántica} y la \textit{termodinámica}.
+
+\subsection{Ecuaciones Fundamentales de la Relatividad General}
+
+Las ecuaciones de campo de Einstein, que gobiernan la curvatura del espacio-tiempo, se expresan como:
+
+\begin{equation}
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+\end{equation}
+
+donde:
+\begin{itemize}
+    \item $G_{\mu\nu}$ es el tensor de Einstein, que describe la curvatura del espacio-tiempo,
+    \item $\Lambda$ es la constante cosmológica,
+    \item $T_{\mu\nu}$ es el tensor energía-momento,
+    \item $G$ es la constante de gravitación universal,
+    \item $c$ es la velocidad de la luz.
+\end{itemize}
+
+Una solución exacta al vacío ($T_{\mu\nu} = 0$) y sin rotación fue hallada por Karl Schwarzschild en 1916:
+
+\begin{equation}
+ds^2 = -\left(1 - \frac{2GM}{c^2 r}\right)c^2 dt^2 + \left(1 - \frac{2GM}{c^2 r}\right)^{-1} dr^2 + r^2 d\Omega^2
+\end{equation}
+
+donde $d\Omega^2 = d\theta^2 + \sin^2\theta \, d\phi^2$ representa el elemento de ángulo sólido.
+
+\subsection{Radio de Schwarzschild y Horizonte de Eventos}
+
+El \textbf{radio de Schwarzschild} $r_s$ define el límite del horizonte de eventos, más allá del cual nada puede escapar:
+
+\begin{equation}
+r_s = \frac{2GM}{c^2}
+\end{equation}
+
+Para una masa solar ($M_\odot = 1.989 \times 10^{30}\,\text{kg}$), este radio equivale aproximadamente a $2.95\,\text{km}$.  
+El tiempo y el espacio se distorsionan drásticamente al acercarse al horizonte, de manera que el tiempo propio $\tau$ y el tiempo coordenado $t$ se relacionan como:
+
+\begin{equation}
+d\tau = dt \sqrt{1 - \frac{r_s}{r}}
+\end{equation}
+
+\subsection{Agujeros Negros Rotantes (Kerr)}
+
+Si el agujero negro posee momento angular $J$, su métrica está dada por la solución de Kerr:
+
+\begin{equation}
+ds^2 = -\left(1 - \frac{2GMr}{\rho^2 c^2}\right)c^2 dt^2 - \frac{4GMar\sin^2\theta}{\rho^2 c^2} c\,dt\,d\phi + \frac{\rho^2}{\Delta}dr^2 + \rho^2 d\theta^2 + \left(r^2 + a^2 + \frac{2GMa^2r\sin^2\theta}{\rho^2 c^2}\right)\sin^2\theta\, d\phi^2
+\end{equation}
+
+donde:
+\[
+\rho^2 = r^2 + a^2\cos^2\theta, \quad \Delta = r^2 - \frac{2GMr}{c^2} + a^2, \quad a = \frac{J}{Mc}.
+\]
+
+El horizonte de eventos ocurre cuando $\Delta = 0$:
+
+\begin{equation}
+r_{\pm} = \frac{GM}{c^2} \pm \sqrt{\left(\frac{GM}{c^2}\right)^2 - a^2}
+\end{equation}
+
+\subsection{Energía y Potencial Gravitatorio}
+
+La energía potencial gravitatoria en las cercanías de un agujero negro, para un objeto de masa $m$, se puede aproximar como:
+
+\begin{equation}
+U(r) = -\frac{GMm}{r}
+\end{equation}
+
+y la energía total en términos relativistas se expresa como:
+
+\begin{equation}
+E = \gamma mc^2 - \frac{GMm}{r}, \qquad \text{donde } \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+
+\subsection{Radiación de Hawking y Termodinámica}
+
+Stephen Hawking demostró que los agujeros negros emiten radiación cuántica, con una temperatura asociada:
+
+\begin{equation}
+T_H = \frac{\hbar c^3}{8\pi G M k_B}
+\end{equation}
+
+La \textbf{entropía} del agujero negro, según Bekenstein-Hawking, está dada por:
+
+\begin{equation}
+S = \frac{k_B c^3 A}{4 G \hbar}
+\end{equation}
+
+donde $A = 4\pi r_s^2$ es el área del horizonte de eventos.  
+Estas relaciones establecen una conexión profunda entre la gravedad, la termodinámica y la teoría cuántica de campos.
+
+\subsection{Evaporación y Vida de un Agujero Negro}
+
+Debido a la radiación de Hawking, los agujeros negros pierden masa con el tiempo:
+
+\begin{equation}
+\frac{dM}{dt} = -\frac{\hbar c^4}{15360 \pi G^2 M^2}
+\end{equation}
+
+El tiempo de evaporación total se puede aproximar como:
+
+\begin{equation}
+t_{evap} \approx \frac{5120 \pi G^2 M^3}{\hbar c^4}
+\end{equation}
+
+lo que implica que los agujeros negros supermasivos tienen vidas muchísimo mayores que la edad actual del universo.
+
+\subsection{Conclusión}
+
+El estudio de los agujeros negros representa la frontera entre la física clásica y cuántica. Comprender su comportamiento podría revelar una teoría unificada de la \textit{gravedad cuántica}, uno de los grandes objetivos de la física teórica contemporánea.
+
+
