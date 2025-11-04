@@ -1,0 +1,131 @@
+% =========================
+%  Paquete de estilos: labstyle.sty
+% =========================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{labstyle}[2025/11/02 Estilos para informes de laboratorio]
+
+% -------------------------
+% 1. PAQUETES NECESARIOS
+% -------------------------
+\RequirePackage{fontspec}        % para XeLaTeX
+\RequirePackage{xcolor}          % colores personalizados
+\RequirePackage{geometry}        % márgenes
+\RequirePackage{graphicx}        % imágenes
+\RequirePackage{fancyhdr}        % encabezado/pie de página
+\RequirePackage{titlesec}        % personalizar títulos
+\RequirePackage{booktabs}        % tablas limpias
+\RequirePackage{caption}         % formato de leyendas
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{float}
+\RequirePackage{enumitem}
+\RequirePackage{setspace}
+
+% \setmainfont{Times New Roman}
+% \linespread{1.3}
+%
+% -------------------------
+% FUENTES
+% -------------------------
+\usepackage{fontspec}           % XeLaTeX
+\setmainfont{Times New Roman}    % Texto normal (serif)
+\usepackage[notextcomp]{stix2}   % Matemáticas
+\usepackage[scaled]{helvet}      % Para secciones/títulos (sans-serif)
+\renewcommand{\ttdefault}{lmtt}  % Monospace para código/listings
+% -------------------------
+% 3. COLORES
+% -------------------------
+\definecolor{labblue}{HTML}{003366}
+\definecolor{labgray}{gray}{0.2}
+
+
+% -------------------------
+% 4. FORMATO DE SECCIONES COMPACTO
+% -------------------------
+\usepackage{titlesec}
+
+
+% Sección principal: sans-serif + negrita
+\titleformat{\section}
+  {\large\bfseries\sffamily\color{labblue}}
+  {\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1ex plus 0.2ex minus 0.2ex}{0.5ex}
+
+% Subsección: sans-serif + negrita
+\titleformat{\subsection}
+  {\normalsize\bfseries\sffamily\color{black}}
+  {\thesubsection.}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{0.8ex plus 0.2ex minus 0.2ex}{0.3ex}
+
+% Subsubsección: sans-serif + negrita + itálica
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\itshape\sffamily\color{black}}
+  {\thesubsubsection.}{0.5em}{}
+\titlespacing*{\subsubsection}{0pt}{0.6ex plus 0.1ex minus 0.1ex}{0.2ex}
+
+% Paragraphs: gris (igual que subsubsections)
+\titleformat{\paragraph}[runin]
+  {\small\bfseries\sffamily\color{labgray}}
+  {}
+  {0em}
+  {}
+\titlespacing*{\paragraph}{0pc}{1.5ex plus 2pt minus 1pt}{12pt}
+
+%
+% \titlespacing*{\section}{0pc}{3ex plus 4pt minus 3pt}{5pt}
+% \titlespacing*{\subsection}{0pc}{2.5ex plus 3pt minus 2pt}{2pt}
+% \titlespacing*{\subsubsection}{0pc}{2ex plus 2.5pt minus 1.5pt}{2pt}
+
+
+\setlength{\parskip}{0pt}     % No hay espacio extra entre párrafos
+\setlength{\parindent}{1em}   % Sangría estándar
+
+% ----------------------------------------------------------
+% 4. CONFIGURACIÓN DE GEOMETRÍA (Márgenes del estilo Tau)
+% ----------------------------------------------------------
+\geometry{
+    left=1.25cm,
+    right=1.25cm,
+    top=2cm,
+    bottom=2cm,
+    headsep=0.75cm
+}
+
+% ----------------------------------------------------------
+% 6. ESPACIADO Y LISTAS
+% ----------------------------------------------------------
+
+\RequirePackage{enumitem}
+\setlist{noitemsep}  % elimina espacio extra entre items
+
+\setlist{noitemsep, topsep=2pt, parsep=0pt, partopsep=0pt}
+
+
+%----------------------------------------------------------
+% MATH PACKAGES
+%----------------------------------------------------------
+
+%!TEX In case of using another font that is not stix2 uncomment 'amssymb'
+
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{mathtools}
+% \RequirePackage{amssymb}
+% Espaciado compacto de ecuaciones
+\newlength{\eqskip}
+\setlength{\eqskip}{8pt}
+
+\expandafter\def\expandafter\normalsize\expandafter{%
+    \normalsize%
+    \setlength\abovedisplayskip{\eqskip}%
+    \setlength\belowdisplayskip{\eqskip}%
+    \setlength\abovedisplayshortskip{\eqskip-\baselineskip}%
+    \setlength\belowdisplayshortskip{\eqskip}%
+}
+
+
+% \RequirePackage{setspace}
+% \setstretch{1.0}  % Interlineado compacto
+
+
+\captionsetup[figure]{font=small, labelfont={small,bf,sf}, skip=5pt, justification=centering}
+\captionsetup[table]{font=small, labelfont={small,bf,sf}, skip=5pt, position=below}

@@ -1,0 +1,15 @@
+\ProvidesPackage{fonts}[2025/11/02 Fuente principal y títulos]
+
+\RequirePackage{fontspec}           % XeLaTeX
+\setmainfont{Times New Roman}        % Texto normal (serif)
+\usepackage[notextcomp]{stix2}       % Matemáticas
+\usepackage[scaled]{helvet}          % Para secciones/títulos (sans-serif)
+\renewcommand{\ttdefault}{lmtt}      % Monospace para código/listings
+
+% \usepackage{unicode-math}
+% \setmathfont{STIX Two Math} % o XITS Math
+% \setmainfont{TeX Gyre Termes} % o cualquier fuente que soporte tus caracteres
+
+% Fuente principal “documento normal” para títulos grandes o portadas
+\newcommand{\docmainfont}{\rmfamily\normalfont\selectfont}
+
