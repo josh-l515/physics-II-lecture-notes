@@ -1,3 +1,38 @@
-% Custom physics macros
-\newcommand{\Ek}{\frac{1}{2}mv^2}
-\newcommand{\force}{F = ma}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{physics}[2025/11/02 Estilos principales del proyecto]
+
+
+\RequirePackage{geometry}
+\geometry{
+    left=0.5cm,
+    right=0.5cm,
+    top=1.5cm,
+    bottom=1.5cm,
+    headsep=0.75cm
+}
+
+\RequirePackage{float}  % permite [H] como opción de float
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+
+
+\usepackage{multicol}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[table]{xcolor} % permite usar \columncolor dentro de tablas
+
+
+
+\RequirePackage{config/fonts}
+\RequirePackage{config/colors}
+\RequirePackage{config/sections}
+\RequirePackage{config/geometry}
+\RequirePackage{config/lists}
+\RequirePackage{config/equations}
+\RequirePackage{config/captions}
+\RequirePackage{config/toc}
+\RequirePackage{config/envs}
+% \RequirePackage{config/footer}
