@@ -1,6 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{physics}[2025/11/02 Estilos principales del proyecto]
 
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+\RequirePackage{config/fonts}
+
+
 
 \RequirePackage{geometry}
 \geometry{
@@ -12,7 +17,8 @@
 }
 
 \RequirePackage{float}  % permite [H] como opción de float
-\usepackage{stfloats}
+\usepackage{dblfloatfix}
+
 
 \usepackage{tikz}
 \usetikzlibrary{intersections}
@@ -28,7 +34,6 @@
 \usepackage{ragged2e} % ya la tienes cargada
 \usepackage{paracol} % permite manipulacion de columnas
 
-\usepackage{cuted}  % para entornos de una columna en documentos de dos
 \usepackage{tcolorbox}
 
 
@@ -40,7 +45,7 @@
 \usepackage{xcolor}       % colores personalizados (ya lo usas)
 
 
-\RequirePackage{config/fonts}
+
 \RequirePackage{config/colors}
 \RequirePackage{config/sections}
 \RequirePackage{config/geometry}
