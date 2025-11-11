@@ -28,6 +28,10 @@ jobs:
           args: "-xelatex -interaction=nonstopmode -shell-escape"
 
 
+      - name: List TeX fonts
+        run: fc-list :family | grep -E "Gyre|STIX" || true
+
+
       - name: Move PDF to docs/
         run: |
           mkdir -p docs

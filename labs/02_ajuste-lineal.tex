@@ -1,11 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definir info del laboratorio
+%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% -------------------------
-% Configuración específica de LAB 02
-% -------------------------
-%
-
-% Redefinir variables del laboratorio
-\renewcommand{\labnumber}{LABORATORIO N° 02 - AJUSTE LINEAL}
+\renewcommand{\labnumber}{LABORATORIO N° 02 - \LaTeX}
 \renewcommand{\labtitle}{PRINCIPIO DE MÍNIMOS CUADRADOS - AJUSTE LINEAL}
 \renewcommand{\labauthor}{Apellidos y Nombres}
 \renewcommand{\labcourse}{\textbf{\textit{Curso:}} Física I - Unidad 1}
@@ -14,50 +11,13 @@
 \renewcommand{\labdate}{03 de Noviembre del 2025}
 \renewcommand{\labdocente}{\textbf{DOCENTE:} HUALLPA AIMITUMA Josué David}
 
-% Reiniciar numeración de secciones y subsecciones
-\setcounter{section}{0}
-\setcounter{subsection}{0}
-\renewcommand{\thesection}{\arabic{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-
-% -------------------------
-% Cabecera y pie de página
-% -------------------------
-\pagestyle{fancy}
-\fancyhead[R]{\footnotesize \textit{\labtitle}}
-\fancyfoot[C]{}
-\fancyfoot[LE]{\footnotesize \textbf{\thepage}\hspace{10pt}\labcourse}
-\fancyfoot[RO]{\footnotesize \labcourse\hspace{10pt}\textbf{\thepage}}
-\fancyfoot[RE,LO]{\footnotesize\itshape \labauthor}
-
-\renewcommand{\headrulewidth}{0pt}  
-\renewcommand{\footrulewidth}{0pt}  
-
-\fancypagestyle{firststyle}{
-    \fancyhead{} 
-    \fancyfoot[R]{\footnotesize \labinstitution\hspace{10pt}\textbf{\labdate}\hspace{10pt}\textbf{\thepage\textendash\pageref{LastPage}}}
-    \fancyfoot[L]{\footnotesize\labcourse}
-}
-
-% -------------------------
-% Portada del laboratorio
-% -------------------------
-\begin{flushleft}
-    {\sffamily\bfseries\fontsize{8}{14}\labnumber\par\vskip8pt}
-    {\bfseries\color{labblue}\sffamily\fontsize{18}{22}\selectfont\labtitle}\par\vskip8pt
-    {\bfseries\fontsize{11pt}{12pt}\selectfont\sffamily \labauthor}\par\vskip8pt
-    {\fontsize{7pt}{8pt}\selectfont\sffamily \labcodigo}\par
-    {\fontsize{7pt}{8pt}\selectfont\sffamily \labcourse}\par \vskip8pt
-    {\fontsize{7pt}{8pt}\selectfont\sffamily \labdocente}
-\end{flushleft}
-\thispagestyle{firststyle}
+\labcover
 
 
-% -------------------------
-% Contenido del laboratorio
-% -------------------------
-\begin{multicols}{2}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicio del Documento
+%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{OBJETIVOS}
 \begin{enumerate}
     \item Determinar experimentalmente el valor de la aceleración de la gravedad local mediante un péndulo simple.
@@ -163,7 +123,7 @@ g = \left(\frac{2 \pi}{10^{b}}\right)^2
 \begin{enumerate}
     \item Realice la linealización de los datos con logaritmos y construya la tabla de sumatorias para mínimos cuadrados:
 
-        \begin{table}[H]
+        \begin{table*}[tbp]
         	\centering
         	\caption{Procesamiento de datos experimentales EXPERIENCIA A.}
         	\label{tabla:analisis_graficos_exp_a}
@@ -186,7 +146,7 @@ g = \left(\frac{2 \pi}{10^{b}}\right)^2
         		$\sum$ & & & & & \\
         		\hline
         	\end{tabular}
-        \end{table}
+        \end{table*}
 
     \item Determine la pendiente $a$, la ordenada $b$, y calcule $g$ junto a su incertidumbre.
     \item Grafique $T$ vs $L$ y superponga la curva ajustada.
@@ -314,30 +274,30 @@ Para determinar la velocidad del chorro de agua que sale del recipiente, se pued
 \begin{enumerate}
     \item Grafique $\ln v$ vs $\ln h$ y realice un ajuste lineal por mínimos cuadrados.
     \item Determine la ordenada $a$ de la recta.
-        \begin{table}[H]
-	\centering
-	\caption{Procesamiento de datos experimentales EXPERIENCIA B: Torricelli.}
-	\label{tabla:analisis_graficos_exp_b}
-	\begin{tabular}{lcccc|>{\columncolor[gray]{0.9}}r}
-		\hline
-		 & $x$ & $y$ & $x*y$ & $x^2$ & $(y_i-b-ax_i)^2$\\
-		$N$ & $\log(h)$ & $\log(v)$ & $\log(h)\log(v)$ & $\log(h)^2$ & $(\log(v)-b-a\log(h))^2$\\
-		\hline
-		1 &  & & & & \\
-		2 &  & & & & \\
-		3 &  & & & & \\
-		4 &  & & & & \\
-		5 &  & & & & \\
-		6 &  & & & & \\
-		7 &  & & & & \\
-		8 &  & & & & \\
-		9 &  & & & & \\
-		10 & & & & & \\
-		\hline
-		$\sum$ & & & & & \\
-		\hline
-	\end{tabular}
-\end{table}
+    \begin{table*}[tbp]
+        \centering
+        \caption{Procesamiento de datos experimentales EXPERIENCIA B: Torricelli.}
+        \label{tabla:analisis_graficos_exp_b}
+        \begin{tabular}{lcccc|>{\columncolor[gray]{0.9}}r}
+            \hline
+            & $x$ & $y$ & $x*y$ & $x^2$ & $(y_i-b-ax_i)^2$\\
+            $N$ & $\log(h)$ & $\log(v)$ & $\log(h)\log(v)$ & $\log(h)^2$ & $(\log(v)-b-a\log(h))^2$\\
+            \hline
+            1 &  & & & & \\
+            2 &  & & & & \\
+            3 &  & & & & \\
+            4 &  & & & & \\
+            5 &  & & & & \\
+            6 &  & & & & \\
+            7 &  & & & & \\
+            8 &  & & & & \\
+            9 &  & & & & \\
+            10 & & & & & \\
+            \hline
+            $\sum$ & & & & & \\
+            \hline
+        \end{tabular}
+    \end{table*}
 
     \item Calcule $g_\text{exp}$ usando:
 
@@ -367,4 +327,4 @@ Compare los resultados obtenidos con la teoría, evalúe la confiabilidad de los
 
 \section{APÉNDICES}
 Agregue aquí el código utilizado para su análisis de datos en Python.
-\end{multicols}
+

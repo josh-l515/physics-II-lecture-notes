@@ -1,0 +1,55 @@
+% ======================================================
+% modes.sty — Control de modos de numeración
+% ======================================================
+
+\ProvidesPackage{modes}[2025/11/06 v1.1 Numeración de teoría y laboratorio]
+
+\makeatletter
+
+% ------------------------------------------------------
+% Definir interruptor de modo
+% ------------------------------------------------------
+\newif\iflabmode
+\labmodefalse % Por defecto: modo teoría
+
+% ------------------------------------------------------
+% Modo teoría (capítulos numerados: 1.1, 1.2, etc.)
+% ------------------------------------------------------
+\newcommand{\settheorymode}{
+  \labmodefalse
+  % Numeración dependiente del capítulo
+  \renewcommand{\thesection}{\thechapter.\arabic{section}}
+  \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+  \renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+  \renewcommand{\thetable}{\thechapter.\arabic{table}}
+  \renewcommand{\theequation}{\thechapter.\arabic{equation}}
+  
+  % Reiniciar contadores por capítulo
+  \@addtoreset{section}{chapter}
+  \@addtoreset{figure}{chapter}
+  \@addtoreset{table}{chapter}
+  \@addtoreset{equation}{chapter}
+}
+
+% ------------------------------------------------------
+% Modo laboratorio (secciones independientes)
+% ------------------------------------------------------
+\newcommand{\setlabmode}{
+  \labmodetrue
+  % Numeración independiente del capítulo
+  \renewcommand{\thesection}{\arabic{section}}
+  \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+  \renewcommand{\thefigure}{\arabic{figure}}
+  \renewcommand{\thetable}{\arabic{table}}
+  \renewcommand{\theequation}{\arabic{equation}}
+  
+  % Reiniciar contadores por laboratorio
+  \setcounter{section}{0}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \setcounter{equation}{0}
+}
+
+\makeatother
+
+\endinput
