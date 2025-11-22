@@ -1,0 +1,58 @@
+% --- Paquetes base ---
+\usepackage{listings}
+\usepackage{xcolor}
+
+% --- Paleta moderna estilo "One Light / GitHub Light" ---
+\definecolor{ml-bg}{HTML}{FFFFFF}
+\definecolor{ml-fg}{HTML}{24292E}
+\definecolor{ml-comment}{HTML}{6A737D}
+\definecolor{ml-keyword}{HTML}{D73A49}
+\definecolor{ml-string}{HTML}{032F62}
+\definecolor{ml-number}{HTML}{005CC5}
+\definecolor{ml-builtin}{HTML}{6F42C1}
+\definecolor{ml-frame}{HTML}{D0D7DE}
+
+% --- Estilo base Modern Light ---
+\lstdefinestyle{modern-light}{
+    backgroundcolor=\color{ml-bg},
+    basicstyle=\ttfamily\small\color{ml-fg},
+    frame=single,
+    rulecolor=\color{ml-frame},
+    framerule=0.6pt,
+    numbers=left,
+    numberstyle=\tiny\color{DeepBlue},
+    numbersep=6.5pt,
+    xleftmargin=1.2em,
+    keywordstyle=\color{ml-keyword}\bfseries,
+    commentstyle=\color{ml-comment}\itshape,
+    stringstyle=\color{ml-string},
+    identifierstyle=\color{ml-fg},
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=true,
+    columns=fullflexible,
+    captionpos=b,
+    keepspaces=true,
+    aboveskip=1em,
+    belowskip=1em
+}
+
+% --- Estilo para Python ---
+\lstdefinestyle{modern-python}{
+    style=modern-light,
+    language=Python,
+    emph={int,float,str,list,dict,print,range,enumerate,zip,open},
+    emphstyle=\color{ml-builtin}
+}
+
+% --- Estilo para Bash ---
+\lstdefinestyle{modern-bash}{
+    style=modern-light,
+    language=bash,
+    emph={cd,ls,sudo,man,python,manim,pip,conda,git},
+    emphstyle=\color{ml-builtin}
+}
+
+% --- Estilo por defecto ---
+\lstset{style=modern-light}
